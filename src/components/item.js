@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Button, Card, CardContent, makeStyles, Snackbar} from "@material-ui/core";
+import {Box, Button, Card, CardContent, makeStyles} from "@material-ui/core";
 import ayi from "./images/ayi.png"
 import {connect} from "react-redux";
 import {addItem} from "../redux/card/card.action";
@@ -61,13 +61,12 @@ const Item = ({addItem, item}) => {
     return (
         <Card className={classes.card}>
             <Box className={classes.imageBox}>
-                <img className={classes.image} src={ayi}/>
+                <img alt={"img"} className={classes.image} src={ayi}/>
             </Box>
 
             <CardContent>
                 <div className={classes.price}>&#x20BA;{item.price}</div>
-                <div className={classes.name}>{item.manufacturer}</div>
-                <div className={classes.name}>{item.tags}</div>
+                <div className={classes.name}>{item.name}</div>
                 <Button className={classes.btn} variant="contained" onClick={handleClick('success')}>Add</Button>
             </CardContent>
         </Card>
